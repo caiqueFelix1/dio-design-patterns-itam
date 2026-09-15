@@ -32,4 +32,5 @@ O fluxo do ativo gerencia as seguintes transições:
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/caiqueFelix1/dio-design-patterns-itam.git](https://github.com/caiqueFelix1/dio-design-patterns-itam.git)
+   git clone https://github.com/caiqueFelix1/dio-design-patterns-itam.git
+   ```
