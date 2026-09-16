@@ -5,32 +5,34 @@ API desenvolvida em **Java 17** e **Spring Boot** para o desafio de Padrões de 
 ---
 
 ## 💡 Sobre o Projeto
-Em vez de utilizar exemplos genéricos, este projeto resolve um problema corporativo real: o controle rigoroso de transições de estado de ativos de TI (como notebooks, servidores e licenças).
+Em vez de utilizar exemplos genéricos, este projeto modela um cenário comum em ambientes corporativos de ITAM: o controle das transições de estado durante o ciclo de vida de ativos de TI.
 
-O sistema implementa o **Padrão de Projeto Comportamental State**, eliminando estruturas complexas de `if/else` ou `switch/case`, garantindo que cada ativo transacione apenas para estados permitidos de acordo com regras de negócio claras.
+O sistema implementa o **Padrão de Projeto Comportamental State**, eliminando estruturas complexas de `if/else` ou `switch/case` e garantindo que cada ativo transite apenas para estados permitidos de acordo com regras de negócio claras.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 - **Java 17**
-- **Spring Boot 4** (Spring Web, Spring MVC)
+- **Spring Boot** (Spring Web, Spring MVC)
 - **Gradle** (Gerenciamento de dependências)
-- **JUnit 5 & MockMvc** (Testes unitários e de integração)
 
 ---
 
 ## 🔄 Ciclo de Vida do Ativo (State Pattern)
 O fluxo do ativo gerencia as seguintes transições:
+
 1. `EM_SOLICITACAO`: Estado inicial ao cadastrar um novo ativo. Pode avançar para `EM_USO` ou ser descomissionado.
 2. `EM_USO`: Ativo entregue ao colaborador. Pode ser enviado para `EM_MANUTENCAO` ou `DESCOMISSIONADO`.
 3. `EM_MANUTENCAO`: Ativo em suporte técnico. Pode retornar para `EM_USO` ou ser `DESCOMISSIONADO` caso seja irrecuperável.
-4. `DESCOMISSIONADO`: Estado final/baixado. Barre novas transições e protege o ativo de retornar ao ciclo operacional.
+4. `DESCOMISSIONADO`: Estado final/baixado. Bloqueia novas transições e impede que o ativo retorne ao ciclo operacional.
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como obter o Projeto
 
 1. Clone o repositório:
+
    ```bash
    git clone https://github.com/caiqueFelix1/dio-design-patterns-itam.git
    ```
+   
